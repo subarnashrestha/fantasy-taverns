@@ -10,12 +10,13 @@ import { CookieModule } from 'ngx-cookie';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './common/auth/login/login.component';
+import { SignupComponent } from './common/auth/signup/signup.component';
 import { TokenInterceptor } from './common/auth/token.interceptor';
 import { HomeComponent } from './home.component';
 
 @NgModule({
     bootstrap: [AppComponent],
-    declarations: [AppComponent, LoginComponent, HomeComponent],
+    declarations: [AppComponent, LoginComponent, SignupComponent, HomeComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
