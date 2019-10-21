@@ -10,6 +10,46 @@
     <div class="col-md-6"></div>
   </div>
   <br />
+
+  <div class="btn-group btn-group-toggle"	
+     ngbRadioGroup  [(ngModel)]="roleId" name="roleId">	
+      <label ngbButtonLabel class="btn-primary">	
+      <input ngbButton type="radio" value="admin" />	
+        Admin	
+      </label>	
+      <label ngbButtonLabel class="btn-primary">	
+      <input ngbButton type="radio" value="manager" />	
+        Manager	
+      </label>	
+  </div>	
+  <br><br>	
+
+  <div *ngIf="roleId === 'admin'">	
+    <div class="row" >	
+      <div class="col-md-6">	
+        <label>Enter Taverns Name :</label>        	
+        <input type="text" class="form-control" [(ngModel)]="tavernsName" name="tavernsName" />	
+     </div>	
+    </div>	
+  </div>	
+
+  <div  *ngIf="roleId === 'manager'">	
+     <div class="row">	
+        <div class="col-md-6">	
+
+         <label>Select Tavrens Name : </label>	
+         <select [(ngModel)]="tavernsName" name="tavernsName">              	
+             <option *ngFor = "let i of taverns">{{i}} </option>	
+         </select>	
+      </div>	
+  </div>	
+  </div>	
+  <br>	
+
+
+
+
+
   <div class="row">
     <div class="col-md-4">
       <button type="submit" class="btn btn-primary" (click)="login()">
